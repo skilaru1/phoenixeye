@@ -1,3 +1,8 @@
 Helpful Links for FPGA/Stepper
 
+Guide for current driver we're using
 https://learn.sparkfun.com/tutorials/tb6612fng-hookup-guide/all
+
+Sample VHDL Code for controlling stepper
+https://www.scirp.org/pdf/CS_2016060916041200.pdf
+
