@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.372 ns
+From           : pin_name8
+To             : stepper_ctrl:inst|motor2[1]
+From Clock     : --
+To Clock       : pin_name
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.023 ns
+From           : stepper_ctrl:inst|motor2[1]
+To             : pin_name4
+From Clock     : pin_name
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -6.727 ns
+From           : pin_name8
+To             : stepper_ctrl:inst|switched
+From Clock     : --
+To Clock       : pin_name
+Failed Paths   : 0
+
+Type           : Clock Setup: 'p11:inst1|altpll:altpll_component|_clk0'
+Slack          : 18.172 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : Restricted to 402.58 MHz ( period = 2.484 ns )
+From           : stepper_ctrl:inst|switched
+To             : stepper_ctrl:inst|motor2[1]
+From Clock     : p11:inst1|altpll:altpll_component|_clk0
+To Clock       : p11:inst1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'p11:inst1|altpll:altpll_component|_clk0'
+Slack          : 0.499 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : stepper_ctrl:inst|motor2[1]
+To             : stepper_ctrl:inst|motor2[1]
+From Clock     : p11:inst1|altpll:altpll_component|_clk0
+To Clock       : p11:inst1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

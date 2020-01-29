@@ -1,0 +1,141 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 136 304)
+	(text "stepper_ctrl" (rect 5 0 62 12)(font "Arial" ))
+	(text "inst" (rect 8 272 25 284)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk50M" (rect 0 0 34 12)(font "Arial" ))
+		(text "clk50M" (rect 21 27 55 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "button" (rect 0 0 30 12)(font "Arial" ))
+		(text "button" (rect 21 43 51 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "stby" (rect 0 0 22 12)(font "Arial" ))
+		(text "stby" (rect 77 27 99 39)(font "Arial" ))
+		(line (pt 120 32)(pt 104 32)(line_width 1))
+	)
+	(port
+		(pt 120 48)
+		(output)
+		(text "ain1" (rect 0 0 20 12)(font "Arial" ))
+		(text "ain1" (rect 79 43 99 55)(font "Arial" ))
+		(line (pt 120 48)(pt 104 48)(line_width 1))
+	)
+	(port
+		(pt 120 64)
+		(output)
+		(text "ain2" (rect 0 0 20 12)(font "Arial" ))
+		(text "ain2" (rect 79 59 99 71)(font "Arial" ))
+		(line (pt 120 64)(pt 104 64)(line_width 1))
+	)
+	(port
+		(pt 120 80)
+		(output)
+		(text "bin1" (rect 0 0 20 12)(font "Arial" ))
+		(text "bin1" (rect 79 75 99 87)(font "Arial" ))
+		(line (pt 120 80)(pt 104 80)(line_width 1))
+	)
+	(port
+		(pt 120 96)
+		(output)
+		(text "bin2" (rect 0 0 20 12)(font "Arial" ))
+		(text "bin2" (rect 79 91 99 103)(font "Arial" ))
+		(line (pt 120 96)(pt 104 96)(line_width 1))
+	)
+	(port
+		(pt 120 112)
+		(output)
+		(text "pwma" (rect 0 0 28 12)(font "Arial" ))
+		(text "pwma" (rect 71 107 99 119)(font "Arial" ))
+		(line (pt 120 112)(pt 104 112)(line_width 1))
+	)
+	(port
+		(pt 120 128)
+		(output)
+		(text "pwmb" (rect 0 0 28 12)(font "Arial" ))
+		(text "pwmb" (rect 71 123 99 135)(font "Arial" ))
+		(line (pt 120 128)(pt 104 128)(line_width 1))
+	)
+	(port
+		(pt 120 144)
+		(output)
+		(text "stby2" (rect 0 0 28 12)(font "Arial" ))
+		(text "stby2" (rect 71 139 99 151)(font "Arial" ))
+		(line (pt 120 144)(pt 104 144)(line_width 1))
+	)
+	(port
+		(pt 120 160)
+		(output)
+		(text "ain2_1" (rect 0 0 31 12)(font "Arial" ))
+		(text "ain2_1" (rect 68 155 99 167)(font "Arial" ))
+		(line (pt 120 160)(pt 104 160)(line_width 1))
+	)
+	(port
+		(pt 120 176)
+		(output)
+		(text "ain2_2" (rect 0 0 31 12)(font "Arial" ))
+		(text "ain2_2" (rect 68 171 99 183)(font "Arial" ))
+		(line (pt 120 176)(pt 104 176)(line_width 1))
+	)
+	(port
+		(pt 120 192)
+		(output)
+		(text "bin2_1" (rect 0 0 31 12)(font "Arial" ))
+		(text "bin2_1" (rect 68 187 99 199)(font "Arial" ))
+		(line (pt 120 192)(pt 104 192)(line_width 1))
+	)
+	(port
+		(pt 120 208)
+		(output)
+		(text "bin2_2" (rect 0 0 31 12)(font "Arial" ))
+		(text "bin2_2" (rect 68 203 99 215)(font "Arial" ))
+		(line (pt 120 208)(pt 104 208)(line_width 1))
+	)
+	(port
+		(pt 120 224)
+		(output)
+		(text "pwma2" (rect 0 0 34 12)(font "Arial" ))
+		(text "pwma2" (rect 65 219 99 231)(font "Arial" ))
+		(line (pt 120 224)(pt 104 224)(line_width 1))
+	)
+	(port
+		(pt 120 240)
+		(output)
+		(text "pwmb2" (rect 0 0 34 12)(font "Arial" ))
+		(text "pwmb2" (rect 65 235 99 247)(font "Arial" ))
+		(line (pt 120 240)(pt 104 240)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 104 272)(line_width 1))
+	)
+)
