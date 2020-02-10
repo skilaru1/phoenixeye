@@ -11,6 +11,14 @@ D10(SS)   ->     D10(SS)  d10 is slave select
 GND       ->     GND
 */
 
+//Set up and begin our data transfer 
+
+// 7000000 => the clock rate for data transfer
+
+//MSBFIRST => Most significant bit transferred first
+
+//SPI_MODE0 => bit encoded on falling edge, receive on rising edge of clock
+
 //#include <SPI.h>
 
 #define DIM 5 //num of elements in array
@@ -19,7 +27,7 @@ void setup() {
 
   pinMode (SS, OUTPUT);
   digitalWrite(SS, HIGH); //
-  SPI.begin();
+  SPI.beginTransaction(SPISettings(7000000,MSBFIRST,SPI_MODE0));
  
 }
 
