@@ -74,7 +74,7 @@ GND*                         : 4         :        :                   :         
 VCCIO1                       : 5         : power  :                   : 3.3V    : 1         :                
 GND                          : 6         : gnd    :                   :         :           :                
 GND*                         : 7         :        :                   :         : 1         :                
-GND*                         : 8         :        :                   :         : 1         :                
+arduino_slave_select         : 8         : input  : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : 9         :        :                   :         : 1         :                
 TDO                          : 10        : output :                   :         : 1         :                
 TMS                          : 11        : input  :                   :         : 1         :                
@@ -130,7 +130,7 @@ GND*                         : 60        :        :                   :         
 GND                          : 61        : gnd    :                   :         :           :                
 VCCINT                       : 62        : power  :                   : 1.2V    :           :                
 GND*                         : 63        :        :                   :         : 4         :                
-GND*                         : 64        :        :                   :         : 4         :                
+arduino_clk                  : 64        : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : 65        :        :                   :         : 4         :                
 VCCIO4                       : 66        : power  :                   : 3.3V    : 4         :                
 GND*                         : 67        :        :                   :         : 4         :                
@@ -185,7 +185,7 @@ GND*                         : 115       :        :                   :         
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
 GND*                         : 118       :        :                   :         : 2         :                
-GND*                         : 119       :        :                   :         : 2         :                
+arduino_bitstream            : 119       : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 120       :        :                   :         : 2         :                
 pin_name8                    : 121       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 122       :        :                   :         : 2         :                

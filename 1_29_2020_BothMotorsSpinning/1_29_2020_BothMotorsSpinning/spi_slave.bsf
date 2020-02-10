@@ -1,0 +1,164 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 304 240)
+	(text "spi_slave" (rect 5 0 52 12)(font "Arial" ))
+	(text "inst" (rect 8 208 25 220)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "sclk" (rect 0 0 20 12)(font "Arial" ))
+		(text "sclk" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset_n" (rect 0 0 36 12)(font "Arial" ))
+		(text "reset_n" (rect 21 43 57 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "ss_n" (rect 0 0 23 12)(font "Arial" ))
+		(text "ss_n" (rect 21 59 44 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "mosi" (rect 0 0 23 12)(font "Arial" ))
+		(text "mosi" (rect 21 75 44 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "rx_req" (rect 0 0 30 12)(font "Arial" ))
+		(text "rx_req" (rect 21 91 51 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "st_load_en" (rect 0 0 53 12)(font "Arial" ))
+		(text "st_load_en" (rect 21 107 74 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "st_load_trdy" (rect 0 0 61 12)(font "Arial" ))
+		(text "st_load_trdy" (rect 21 123 82 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "st_load_rrdy" (rect 0 0 61 12)(font "Arial" ))
+		(text "st_load_rrdy" (rect 21 139 82 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "st_load_roe" (rect 0 0 56 12)(font "Arial" ))
+		(text "st_load_roe" (rect 21 155 77 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "tx_load_en" (rect 0 0 53 12)(font "Arial" ))
+		(text "tx_load_en" (rect 21 171 74 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "tx_load_data[d_width-1..0]" (rect 0 0 128 12)(font "Arial" ))
+		(text "tx_load_data[d_width-1..0]" (rect 21 187 149 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 288 32)
+		(output)
+		(text "trdy" (rect 0 0 20 12)(font "Arial" ))
+		(text "trdy" (rect 247 27 267 39)(font "Arial" ))
+		(line (pt 288 32)(pt 272 32)(line_width 1))
+	)
+	(port
+		(pt 288 48)
+		(output)
+		(text "rrdy" (rect 0 0 20 12)(font "Arial" ))
+		(text "rrdy" (rect 247 43 267 55)(font "Arial" ))
+		(line (pt 288 48)(pt 272 48)(line_width 1))
+	)
+	(port
+		(pt 288 64)
+		(output)
+		(text "roe" (rect 0 0 15 12)(font "Arial" ))
+		(text "roe" (rect 252 59 267 71)(font "Arial" ))
+		(line (pt 288 64)(pt 272 64)(line_width 1))
+	)
+	(port
+		(pt 288 80)
+		(output)
+		(text "rx_data[d_width-1..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "rx_data[d_width-1..0]" (rect 165 75 267 87)(font "Arial" ))
+		(line (pt 288 80)(pt 272 80)(line_width 3))
+	)
+	(port
+		(pt 288 96)
+		(output)
+		(text "busy" (rect 0 0 24 12)(font "Arial" ))
+		(text "busy" (rect 243 91 267 103)(font "Arial" ))
+		(line (pt 288 96)(pt 272 96)(line_width 1))
+	)
+	(port
+		(pt 288 112)
+		(output)
+		(text "miso" (rect 0 0 23 12)(font "Arial" ))
+		(text "miso" (rect 244 107 267 119)(font "Arial" ))
+		(line (pt 288 112)(pt 272 112)(line_width 1))
+	)
+	(parameter
+		"cpol"
+		"'0'"
+		""
+		(type "PARAMETER_ENUM")	)
+	(parameter
+		"cpha"
+		"'0'"
+		""
+		(type "PARAMETER_ENUM")	)
+	(parameter
+		"d_width"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 272 208)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 304 -64 404 16))
+)

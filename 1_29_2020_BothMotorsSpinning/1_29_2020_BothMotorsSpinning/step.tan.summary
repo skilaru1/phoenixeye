@@ -5,19 +5,19 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.220 ns
-From           : stepper_ctrl:inst2|motor2[1]
-To             : pin_name4
+Actual Time    : 7.137 ns
+From           : stepper_ctrl:inst|motor2[0]
+To             : pin_name2
 From Clock     : pin_name
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Clock Setup: 'p11:inst1|altpll:altpll_component|_clk0'
-Slack          : 8.564 ns
+Slack          : 11.034 ns
 Required Time  : 50.00 MHz ( period = 20.000 ns )
-Actual Time    : 87.44 MHz ( period = 11.436 ns )
-From           : stepper_ctrl:inst2|count[0]
-To             : stepper_ctrl:inst2|motor2[1]
+Actual Time    : 111.53 MHz ( period = 8.966 ns )
+From           : stepper_ctrl:inst|count[10]
+To             : stepper_ctrl:inst|count[8]
 From Clock     : p11:inst1|altpll:altpll_component|_clk0
 To Clock       : p11:inst1|altpll:altpll_component|_clk0
 Failed Paths   : 0
@@ -26,8 +26,8 @@ Type           : Clock Hold: 'p11:inst1|altpll:altpll_component|_clk0'
 Slack          : 0.499 ns
 Required Time  : 50.00 MHz ( period = 20.000 ns )
 Actual Time    : N/A
-From           : stepper_ctrl:inst2|motor2[1]
-To             : stepper_ctrl:inst2|motor2[1]
+From           : stepper_ctrl:inst|motor2[1]
+To             : stepper_ctrl:inst|motor2[1]
 From Clock     : p11:inst1|altpll:altpll_component|_clk0
 To Clock       : p11:inst1|altpll:altpll_component|_clk0
 Failed Paths   : 0

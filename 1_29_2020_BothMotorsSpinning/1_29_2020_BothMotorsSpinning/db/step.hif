@@ -1589,6 +1589,53 @@ p11:inst1|altpll:altpll_component
 
 # end
 # entity
+spi_slave
+# storage
+db|step.(4).cnf
+db|step.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+spi_slave.vhd
+758e2054e1a7fa55bdc751ed29da7a0
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+cpol
+'0'
+PARAMETER_ENUM
+USR
+cpha
+'0'
+PARAMETER_ENUM
+USR
+d_width
+8
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+spi_slave:inst4
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 step
 # storage
 db|step.(0).cnf
@@ -1596,7 +1643,7 @@ db|step.(0).cnf
 # case_insensitive
 # source_file
 step.bdf
-c3dfe060ebd579653773922fd43a69e
+f2db8b93ccceeb57567f6351415726
 26
 # internal_option {
 BLOCK_DESIGN_NAMING
@@ -1620,7 +1667,7 @@ ON
 # case_insensitive
 # source_file
 stepper_ctrl.vhd
-c9c120e6308a39933e2be550278116e3
+582ed967bb1e7d83ce705e2bf55d4cd3
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1632,8 +1679,14 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# user_parameter {
+aw
+8
+PARAMETER_SIGNED_DEC
+DEF
+}
 # hierarchies {
-stepper_ctrl:inst2
+stepper_ctrl:inst
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
