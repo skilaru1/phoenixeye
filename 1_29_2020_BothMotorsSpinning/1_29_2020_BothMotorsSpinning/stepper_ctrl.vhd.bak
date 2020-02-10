@@ -7,6 +7,7 @@ entity stepper_ctrl is
 	Port(
 		clk50M:	in	STD_LOGIC;
 		button: in 	STD_LOGIC;
+		angle:	in	STD_LOGIC_VECTOR(31 downto 0);
 		
 		-- Allows the H-bridges to work when high (has a pulldown resistor so it must actively pulled high)
 		stby:	out	STD_LOGIC;
@@ -43,6 +44,11 @@ architecture behavior of stepper_ctrl is
 	signal motors: std_logic_vector(3 downto 0) := "0000";
 	signal motor2: std_logic_vector(3 downto 0) :="0000";
 	signal switched: std_logic := '0';
+	
+	
+	signal quotient:	std_logic_vector(31 downto 0) := angle;
+	signal clicks:		std_logic_vector(31 downto 0) := (others => '0');
+	signal divide_done:	std_logic := '0';
 begin
 	stby <= '1';
 	pwma <= '1';
@@ -66,8 +72,14 @@ begin
 	process(clk50M)
 	begin
 		if rising_edge(clk50M) then
-			--count <= count + 1;
-			if button = '1' and switched = '0' then
+			if (quotient > 18) then
+				quotient <= quotient - 18;
+				clicks <= clicks + 1;
+			else
+				divide_done <= '1';
+			end if;
+			if divide_done = '1' and clicks >= count + 1 and switched = '0' then
+			--if button = '1' and switched = '0' then
 				if motors = "0000" then
 					motors <= "0110";
 					motor2 <= "0110";
@@ -75,14 +87,16 @@ begin
 					motors <= "1001";
 					motor2 <= "1001";
 				elsif motors = "1001" then
-					motors <= "0000";
-					motor2 <= "0000";
+					motors <= "0110";
+					motor2 <= "0110";
 				end if;
 				switched <= '1';
+				count <= count + 1;
 			end if;
-			if button = '0' then
+			if switched = '1' then
 				switched <= '0';
 			end if;
+			
 
 				--Motor 2 else statements------
 				--elsif motor2 = "0001" then

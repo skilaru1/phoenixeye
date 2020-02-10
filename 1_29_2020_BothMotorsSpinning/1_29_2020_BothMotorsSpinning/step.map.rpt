@@ -1,5 +1,5 @@
 Analysis & Synthesis report for step
-Wed Jan 29 14:23:57 2020
+Mon Feb 10 13:44:52 2020
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -43,15 +43,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 29 14:23:57 2020        ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 10 13:44:52 2020        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; step                                         ;
 ; Top-level Entity Name              ; step                                         ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 4                                            ;
-;     Total combinational functions  ; 2                                            ;
-;     Dedicated logic registers      ; 3                                            ;
-; Total registers                    ; 3                                            ;
+; Total logic elements               ; 66                                           ;
+;     Total combinational functions  ; 65                                           ;
+;     Dedicated logic registers      ; 47                                           ;
+; Total registers                    ; 47                                           ;
 ; Total pins                         ; 16                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
@@ -162,34 +162,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 4                           ;
-;                                             ;                             ;
-; Total combinational functions               ; 2                           ;
-; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 0                           ;
-;     -- 3 input functions                    ; 0                           ;
-;     -- <=2 input functions                  ; 2                           ;
-;                                             ;                             ;
-; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 2                           ;
-;     -- arithmetic mode                      ; 0                           ;
-;                                             ;                             ;
-; Total registers                             ; 3                           ;
-;     -- Dedicated logic registers            ; 3                           ;
-;     -- I/O registers                        ; 0                           ;
-;                                             ;                             ;
-; I/O pins                                    ; 16                          ;
-; Total PLLs                                  ; 1                           ;
-; Maximum fan-out node                        ; stepper_ctrl:inst|motor2[1] ;
-; Maximum fan-out                             ; 6                           ;
-; Total fan-out                               ; 21                          ;
-; Average fan-out                             ; 0.95                        ;
-+---------------------------------------------+-----------------------------+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                           ;
++---------------------------------------------+-----------------------------------------+
+; Resource                                    ; Usage                                   ;
++---------------------------------------------+-----------------------------------------+
+; Estimated Total logic elements              ; 66                                      ;
+;                                             ;                                         ;
+; Total combinational functions               ; 65                                      ;
+; Logic element usage by number of LUT inputs ;                                         ;
+;     -- 4 input functions                    ; 11                                      ;
+;     -- 3 input functions                    ; 9                                       ;
+;     -- <=2 input functions                  ; 45                                      ;
+;                                             ;                                         ;
+; Logic elements by mode                      ;                                         ;
+;     -- normal mode                          ; 17                                      ;
+;     -- arithmetic mode                      ; 48                                      ;
+;                                             ;                                         ;
+; Total registers                             ; 47                                      ;
+;     -- Dedicated logic registers            ; 47                                      ;
+;     -- I/O registers                        ; 0                                       ;
+;                                             ;                                         ;
+; I/O pins                                    ; 16                                      ;
+; Total PLLs                                  ; 1                                       ;
+; Maximum fan-out node                        ; p11:inst1|altpll:altpll_component|_clk0 ;
+; Maximum fan-out                             ; 47                                      ;
+; Total fan-out                               ; 304                                     ;
+; Average fan-out                             ; 2.36                                    ;
++---------------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,27 +197,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
-; |step                           ; 2 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |step                                   ; work         ;
+; |step                           ; 65 (0)            ; 47 (0)       ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |step                                   ; work         ;
 ;    |p11:inst1|                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |step|p11:inst1                         ;              ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |step|p11:inst1|altpll:altpll_component ;              ;
-;    |stepper_ctrl:inst|          ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |step|stepper_ctrl:inst                 ;              ;
+;    |stepper_ctrl:inst2|         ; 65 (65)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |step|stepper_ctrl:inst2                ;              ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+---------------------------------------+-----------------------------------------+
-; Register name                         ; Reason for Removal                      ;
-+---------------------------------------+-----------------------------------------+
-; stepper_ctrl:inst|motors[3]           ; Merged with stepper_ctrl:inst|motor2[0] ;
-; stepper_ctrl:inst|motor2[3]           ; Merged with stepper_ctrl:inst|motor2[0] ;
-; stepper_ctrl:inst|motors[0]           ; Merged with stepper_ctrl:inst|motor2[0] ;
-; stepper_ctrl:inst|motors[2]           ; Merged with stepper_ctrl:inst|motor2[1] ;
-; stepper_ctrl:inst|motor2[2]           ; Merged with stepper_ctrl:inst|motor2[1] ;
-; stepper_ctrl:inst|motors[1]           ; Merged with stepper_ctrl:inst|motor2[1] ;
-; Total Number of Removed Registers = 6 ;                                         ;
-+---------------------------------------+-----------------------------------------+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++----------------------------------------+------------------------------------------+
+; Register name                          ; Reason for Removal                       ;
++----------------------------------------+------------------------------------------+
+; stepper_ctrl:inst2|motors[3]           ; Merged with stepper_ctrl:inst2|motor2[0] ;
+; stepper_ctrl:inst2|motor2[3]           ; Merged with stepper_ctrl:inst2|motor2[0] ;
+; stepper_ctrl:inst2|motors[0]           ; Merged with stepper_ctrl:inst2|motor2[0] ;
+; stepper_ctrl:inst2|motors[2]           ; Merged with stepper_ctrl:inst2|motor2[1] ;
+; stepper_ctrl:inst2|motor2[2]           ; Merged with stepper_ctrl:inst2|motor2[1] ;
+; stepper_ctrl:inst2|motors[1]           ; Merged with stepper_ctrl:inst2|motor2[1] ;
+; stepper_ctrl:inst2|quotient[1]         ; Merged with stepper_ctrl:inst2|clicks[0] ;
+; stepper_ctrl:inst2|count[29..31]       ; Stuck at GND due to stuck port data_in   ;
+; Total Number of Removed Registers = 10 ;                                          ;
++----------------------------------------+------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -225,12 +227,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 47    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Clock Enable       ; 44    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -631,7 +633,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Jan 29 14:23:56 2020
+    Info: Processing started: Mon Feb 10 13:44:50 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off step -c step
 Info: Found 1 design units, including 1 entities, in source file step.bdf
     Info: Found entity 1: step
@@ -648,7 +650,8 @@ Info: Found 2 design units, including 1 entities, in source file stepper_ctrl.vh
     Info: Found design unit 1: stepper_ctrl-behavior
     Info: Found entity 1: stepper_ctrl
 Info: Elaborating entity "step" for the top level hierarchy
-Info: Elaborating entity "stepper_ctrl" for hierarchy "stepper_ctrl:inst"
+Info: Elaborating entity "stepper_ctrl" for hierarchy "stepper_ctrl:inst2"
+Warning (10873): Using initial value X (don't care) for net "quotient[0]" at stepper_ctrl.vhd(49)
 Warning: Using design file p11.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info: Found entity 1: p11
 Info: Elaborating entity "p11" for hierarchy "p11:inst1"
@@ -713,15 +716,17 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "pin_name9" is stuck at VCC
     Warning (13410): Pin "pin_name14" is stuck at VCC
     Warning (13410): Pin "pin_name15" is stuck at VCC
-Info: Implemented 21 device resources after synthesis - the final resource count might be different
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "pin_name8"
+Info: Implemented 113 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 14 output pins
-    Info: Implemented 4 logic cells
+    Info: Implemented 96 logic cells
     Info: Implemented 1 PLLs
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 240 megabytes
-    Info: Processing ended: Wed Jan 29 14:23:57 2020
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Mon Feb 10 13:44:52 2020
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

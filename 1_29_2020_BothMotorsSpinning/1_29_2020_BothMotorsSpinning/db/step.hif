@@ -1596,7 +1596,7 @@ db|step.(0).cnf
 # case_insensitive
 # source_file
 step.bdf
-4858b9863b243b4c43922ea7b410e7ba
+c3dfe060ebd579653773922fd43a69e
 26
 # internal_option {
 BLOCK_DESIGN_NAMING
@@ -1620,7 +1620,7 @@ ON
 # case_insensitive
 # source_file
 stepper_ctrl.vhd
-56bdac9cc09048abbc6fc22db0c232e9
+c9c120e6308a39933e2be550278116e3
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1633,7 +1633,7 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # hierarchies {
-stepper_ctrl:inst
+stepper_ctrl:inst2
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf

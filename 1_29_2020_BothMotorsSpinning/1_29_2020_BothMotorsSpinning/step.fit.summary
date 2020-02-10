@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Jan 29 14:23:59 2020
+Fitter Status : Successful - Mon Feb 10 13:44:54 2020
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : step
 Top-level Entity Name : step
 Family : Cyclone II
 Device : EP2C5T144C8
 Timing Models : Final
-Total logic elements : 3 / 4,608 ( < 1 % )
-    Total combinational functions : 2 / 4,608 ( < 1 % )
-    Dedicated logic registers : 3 / 4,608 ( < 1 % )
-Total registers : 3
+Total logic elements : 66 / 4,608 ( 1 % )
+    Total combinational functions : 65 / 4,608 ( 1 % )
+    Dedicated logic registers : 47 / 4,608 ( 1 % )
+Total registers : 47
 Total pins : 16 / 89 ( 18 % )
 Total virtual pins : 0
 Total memory bits : 0 / 119,808 ( 0 % )
