@@ -1,3 +1,5 @@
 https://cdn-learn.adafruit.com/downloads/pdf/16-channel-pwm-servo-driver.pdf
 
 https://www.arduino.cc/en/Reference/SPI
+
+https://pages.github.coecis.cornell.edu/tr272/Team4Website/Lab4/writeup.html --they did something similar, using spi to send info from arduinos to fpgas
