@@ -13,7 +13,10 @@ GND       ->     GND
 
 //Set up and begin our data transfer 
 
-// 7000000 => the clock rate for data transfer
+// 16000000 => the clock rate for data transfer
+
+// changed max clock rate from 7MHz to 16MHz, since that's the clock rate of the 
+// Arduino and the FPGA is clocked at 50 MHz
 
 //MSBFIRST => Most significant bit transferred first
 
@@ -27,7 +30,7 @@ void setup() {
 
   pinMode (SS, OUTPUT);
   digitalWrite(SS, HIGH); //
-  SPI.beginTransaction(SPISettings(7000000,MSBFIRST,SPI_MODE0));
+  SPI.beginTransaction(SPISettings(16000000,MSBFIRST,SPI_MODE0));
  
 }
 
@@ -42,5 +45,3 @@ void loop() {
   digitalWrite(SS,HIGH);
   delay(1000);
 }
-
-
