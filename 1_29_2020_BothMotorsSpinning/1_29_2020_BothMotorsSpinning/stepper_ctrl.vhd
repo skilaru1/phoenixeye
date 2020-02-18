@@ -5,12 +5,12 @@ use IEEE.std_logic_unsigned.all;
 
 entity stepper_ctrl is
 	Generic(
-		aw : INTEGER := 8
+		angle_width : INTEGER := 8
     );
 	Port(
 		clk50M:	in	STD_LOGIC;
 		button: in 	STD_LOGIC;
-		angle:	in	SIGNED(aw-1 downto 0);
+		angle:	in	SIGNED(angle_width-1 downto 0);
 		
 		-- Allows the H-bridges to work when high (has a pulldown resistor so it must actively pulled high)
 		stby:	out	STD_LOGIC;
@@ -49,10 +49,10 @@ architecture behavior of stepper_ctrl is
 	signal switched: std_logic := '0';
 	
 	
-	signal quotient:	signed(aw-1 downto 0) := angle;
-	signal clicks:		signed(aw-1 downto 0) := (others => '0');
-	signal current_angle: signed(aw-1 downto 0) := (others => '0');
-	signal steps_to_move: signed(aw-1 downto 0) := (others => '0');
+	signal quotient:	signed(angle_width-1 downto 0) := angle;
+	signal clicks:		signed(angle_width-1 downto 0) := (others => '0');
+	signal current_angle: signed(angle_width-1 downto 0) := (others => '0');
+	signal steps_to_move: signed(angle_width-1 downto 0) := (others => '0');
 	signal divide_done:	std_logic := '0';
 begin
 	stby <= '1';
@@ -82,35 +82,40 @@ begin
 			elsif (quotient > 18) then
 				quotient <= quotient - 18;
 				clicks <= clicks + 1;
-			end if;
-			steps_to_move <= (clicks - current_angle);
-			if (steps_to_move < 0) then
-				steps_to_move <= steps_to_move + 20;
 			else
-				divide_done <= '1';
+				steps_to_move <= (clicks - current_angle);
+				if (steps_to_move < 0) then
+					steps_to_move <= steps_to_move + 20;
+				else
+					--divide_done <= '1';
+					--if (divide_done = '1') and (clicks > count) and (switched = '0') then
+						if (clicks > count) and (switched = '0') then
+						--if button = '1' and switched = '0' then
+							if motors = "0000" then
+								motors <= "0110";
+								motor2 <= "0110";
+							elsif motors = "0110" then
+								motors <= "1001";
+								motor2 <= "1001";
+							elsif motors = "1001" then
+								motors <= "0110";
+								motor2 <= "0110";
+							end if;
+							switched <= '1';
+							count <= count + 1;
+							current_angle <= current_angle + 1;
+						elsif (clicks = count) then
+							count <= (others => '0');
+						end if;
+						if switched = '1' then
+							switched <= '0';
+						end if;
+				end if;
 			end if;
 			
-			if (divide_done = '1') and (clicks > count) and (switched = '0') then
-			--if button = '1' and switched = '0' then
-				if motors = "0000" then
-					motors <= "0110";
-					motor2 <= "0110";
-				elsif motors = "0110" then
-					motors <= "1001";
-					motor2 <= "1001";
-				elsif motors = "1001" then
-					motors <= "0110";
-					motor2 <= "0110";
-				end if;
-				switched <= '1';
-				count <= count + 1;
-				current_angle <= current_angle + 1;
-			elsif (clicks = count) then
-				count <= (others => '0');
-			end if;
-			if switched = '1' then
-				switched <= '0';
-			end if;
+			
+			
+			
 			
 
 				--Motor 2 else statements------
