@@ -1636,26 +1636,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-step
-# storage
-db|step.(0).cnf
-db|step.(0).cnf
-# case_insensitive
-# source_file
-step.bdf
-f2db8b93ccceeb57567f6351415726
-26
-# internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 stepper_ctrl
 # storage
 db|step.(1).cnf
@@ -1667,7 +1647,7 @@ ON
 # case_insensitive
 # source_file
 stepper_ctrl.vhd
-582ed967bb1e7d83ce705e2bf55d4cd3
+c838e3e3c26553f3e5247d4bc6d5e21c
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1680,10 +1660,10 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # user_parameter {
-aw
+angle_width
 8
 PARAMETER_SIGNED_DEC
-DEF
+USR
 }
 # hierarchies {
 stepper_ctrl:inst
@@ -1691,6 +1671,26 @@ stepper_ctrl:inst
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+step
+# storage
+db|step.(0).cnf
+db|step.(0).cnf
+# case_insensitive
+# source_file
+step.bdf
+40249c53bfef6ca874669bfa6c53dc1
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
 # macro_sequence
 
 # end

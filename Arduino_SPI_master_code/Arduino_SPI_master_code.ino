@@ -26,22 +26,39 @@ GND       ->     GND
 
 #define DIM 5 //num of elements in array
 
+//int x[5] ={0, 28, 36, 45, 70};
+  //int x[4] = {224,223, 222,221};
+
+  int p7 = 7;
+  int p6 = 6;
 void setup() {
 
   pinMode (SS, OUTPUT);
-  digitalWrite(SS, HIGH); //
-  SPI.beginTransaction(SPISettings(16000000,MSBFIRST,SPI_MODE0));
- 
+  //digitalWrite(SS, HIGH); //
+  SPI.beginTransaction(SPISettings(7000000,MSBFIRST,SPI_MODE0));
+
+  pinMode(7, INPUT);
+  pinMode(6, INPUT);
 }
 
 void loop() {
 
-  int x[5] ={0, 28, 36, 45, 70};
   digitalWrite(SS, LOW);    //low after spi.begin
-  for (int i=0;i<DIM;i++){
-    SPI.transfer(x[i]);
+  delay(100);
+  for (int i=0;i<4/*DIM*/;i++){
+    SPI.transfer(5/*/x[i]*/);
     delay(1);
+    Serial.print("i:");
+    Serial.print(i);
+    Serial.print(", rrdy: ");
+    Serial.print(digitalRead(p7));
+    Serial.print(", rx_req: ");
+    Serial.println(digitalRead(p6));
   } 
   digitalWrite(SS,HIGH);
+    Serial.print("rrdy: ");
+    Serial.print(digitalRead(p7));
+    Serial.print(", rx_req: ");
+    Serial.println(digitalRead(p6));
   delay(1000);
 }

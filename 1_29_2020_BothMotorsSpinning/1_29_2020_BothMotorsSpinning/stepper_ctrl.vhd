@@ -11,6 +11,9 @@ entity stepper_ctrl is
 		clk50M:	in	STD_LOGIC;
 		button: in 	STD_LOGIC;
 		angle:	in	SIGNED(angle_width-1 downto 0);
+		rrdy:	in	STD_LOGIC;
+		
+		rx_req:	out	STD_LOGIC;
 		
 		-- Allows the H-bridges to work when high (has a pulldown resistor so it must actively pulled high)
 		stby:	out	STD_LOGIC;
@@ -34,8 +37,11 @@ entity stepper_ctrl is
 		
 		--pwm input that controls speed
 		pwma2:	out	STD_LOGIC;
-		pwmb2:	out	STD_LOGIC
-		
+		pwmb2:	out	STD_LOGIC;
+
+		led2:	out	STD_LOGIC;
+		led1:	out	STD_LOGIC;
+		led0:	out	STD_LOGIC
 
 		
 	);
@@ -49,12 +55,17 @@ architecture behavior of stepper_ctrl is
 	signal switched: std_logic := '0';
 	
 	
-	signal quotient:	signed(angle_width-1 downto 0) := angle;
+	signal quotient:	signed(angle_width-1 downto 0) := (others => '0');--angle;
 	signal clicks:		signed(angle_width-1 downto 0) := (others => '0');
 	signal current_angle: signed(angle_width-1 downto 0) := (others => '0');
 	signal steps_to_move: signed(angle_width-1 downto 0) := (others => '0');
-	signal divide_done:	std_logic := '0';
+	--signal divide_done:	std_logic := '0';
 begin
+
+	led2 <= std_logic_vector(angle)(angle_width - 1);
+	led1 <= std_logic_vector(angle)(angle_width - 2);
+	led0 <= std_logic_vector(angle)(angle_width - 3);
+	
 	stby <= '1';
 	pwma <= '1';
 	pwmb <= '1';
@@ -77,6 +88,13 @@ begin
 	process(clk50M)
 	begin
 		if rising_edge(clk50M) then
+			if (rrdy = '1') then
+				rx_req <= '1';
+				quotient <= angle;
+			else
+				rx_req <= '0';
+			end if;
+			
 			if (quotient > 360) then
 				quotient <= quotient - 360;
 			elsif (quotient > 18) then
